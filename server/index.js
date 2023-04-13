@@ -15,12 +15,12 @@ app.get('/phones', (req, res)=> {
     res.send(phones)
 })
 
+
 // getting single data
 app.get('/phone/:id', (req,res)=> {
     const id = parseInt(req.params.id, 10)
     const phone = phones.find(ph => ph.id === id) || {}
     res.send(phone)
-
 })
 
 
