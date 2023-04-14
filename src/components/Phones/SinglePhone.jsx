@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { PhoneContext } from './AllPhones';
 
@@ -8,16 +8,9 @@ const SinglePhone = ({phones}) => {
     let selectedPhone = {}
 
 
-  
-   
-
-//    if(allPhones && allPhones.length > 0){
-//     selectedPhone = phones.find((phone) => phone.id === parseInt(id, 10));
-    
-//    }
-
-
- // console.log(selectedPhone);
+   if(allPhones && allPhones.length > 0){
+    selectedPhone = allPhones.find((phone) => phone.id === parseInt(id, 10));    
+   }
 
     return (
         <div>
@@ -25,10 +18,10 @@ const SinglePhone = ({phones}) => {
             <h1>{id}</h1>
             <div className="d-flex">
                 <div>
-                    {/* <h2>Phone Name: <span className="text-danger">{selectedPhone?.name}</span> </h2> */}
+                    <h2>Phone Name: <span className="text-danger">{selectedPhone?.name}</span> </h2>
                 </div>
                 <div className="ms-4">
-                    {/* <img src={selectedPhone?.image} alt="" /> */}
+                    <img src={selectedPhone?.image} alt="" />
                 </div>
             </div>
         </div>
